@@ -75,3 +75,47 @@ class Solution(object):
         return False
 ```
 Overall, the time complexity is O(n) and the space complexity is O(1).
+
+### 160. Intersection of Two Linked Lists
+Question: [leetcode](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+
+Use two pointer strategy.
+```python
+class Solution(object):
+    def getIntersectionNode(self, headA, headB):
+        """
+        :type head1, head1: ListNode
+        :rtype: ListNode
+        """
+        if not headA or not headB:
+            return None
+
+        pA, pB = headA, headB
+
+        while pA != pB:
+            pA = pA.next if pA else headB
+            pB = pB.next if pB else headA
+
+        return pA
+```
+
+### 169. Majority Element
+Question: [leetcode](https://leetcode.com/problems/majority-element/)
+
+If we solve the question using set, and count the sum of appearance, it takes up O(n) space complexity. Therefore, we introduce a new algorithm: Boyer–Moore Voting Algorithm, which takes O(n) time complexity and O(1) space complexity.
+
+```python
+class Solution(object):
+    def majorityElement(self, nums):
+        count = 1
+        can = nums[0]
+        for i in nums[1:]:
+            if count == 0:
+                count = 1
+                can = i
+            elif can == i:
+                count += 1
+            else:
+                count -= 1
+        return can
+```
