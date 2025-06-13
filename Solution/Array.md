@@ -1,4 +1,4 @@
-**## Leetcode solution - Array**
+## Leetcode solution - Array
 
 The most common data structure that used to store and process data. It takes O(1) when accessing the data, and O(n) when deleting and adding data.
 
