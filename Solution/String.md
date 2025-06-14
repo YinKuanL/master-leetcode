@@ -24,6 +24,7 @@ class Solution(object):
 
 ### 28. Find the Index of the First Occurrence in a String
 
+Question: [Leetcode](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)
 ```python
 class Solution(object):
     def strStr(self, haystack, needle):
