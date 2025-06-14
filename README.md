@@ -5,3 +5,4 @@ Below are the questions and ideas sorted by data structures.
 * [Hash Table](Solution/HashTable.md)
 * [Array](Solution/Array.md)
 * [Dynamic Programming](Solution/Dynamic%20Programming.md)
+* [String](Solution/String.md)
