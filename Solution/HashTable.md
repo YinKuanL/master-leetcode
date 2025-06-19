@@ -119,3 +119,43 @@ class Solution(object):
                 count -= 1
         return can
 ```
+
+### 12. Integer to Roman (Medium)
+
+Question: [leetcode](https://leetcode.com/problems/integer-to-roman/)
+
+```python
+class Solution(object):
+    def intToRoman(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+        roman = {1:'I', 5:'V', 10:'X', 50:'L', 100:'C', 500:'D', 1000:'M'}
+        Roman = [100, 10, 1]
+        result = ''
+        if num >= 1000:
+            result += 'M' *(num // 1000)
+            num %= 1000
+
+        for i in Roman:
+            digit = num // i
+            if digit == 9:
+                result += roman[i] + roman[i * 10]
+            elif digit >= 5:
+                result += roman[i * 5] + roman[i] * (digit - 5)
+            elif digit == 4:
+                result += roman[i] + roman[i * 5]
+            else:
+                result += roman[i] * digit
+            num %= i
+
+        return result
+```
+## 🔁 Related Roman Numeral Problems
+
+- [12. Integer to Roman (Medium)](#12-integer-to-roman-medium)
+- [13. Roman to Integer (Easy)](#13-roman-to-integer-easy)
+
+
+.
